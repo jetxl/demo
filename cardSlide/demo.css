@@ -110,7 +110,7 @@ button{
 
 .info-map{
 	height: 0;
-	background:#ea4c89 url(/Tpl/edm/demo/map.png);
+	background:#ea4c89 url(map.png);
 	background-size: auto 100%;
 }
 
