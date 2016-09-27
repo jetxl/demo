@@ -26,9 +26,11 @@ button{
 }
 
 .card-box{
-	width: 90%;
-	margin: auto;
-	padding: 20px 0;
+    position: absolute;
+    padding: 20px 0;
+    width: 90%;
+    left: 50%;
+    margin-left: -45%;
 }
 
 .card-box .card{
@@ -36,7 +38,6 @@ button{
 	border-radius: 4px;
 	margin-bottom: 14px;
 	height: 140px;
-	position: relative;
 }
 
 .preview{
@@ -167,9 +168,9 @@ button{
 	opacity: 0;
 }
 
-.card.show .after{
-	-webkit-animation: info-after .4s linear;
-	-webkit-animation-delay: .2s;
+.card.show:after{
+	content: "";
+	-webkit-animation: info-after .4s linear .2s;
 	position: absolute;
 	z-index: 1;
 	width: 100%;
@@ -178,8 +179,6 @@ button{
 	height: 70px;
 	opacity: 0;
 	background-color: #eee;
-	/*box-shadow: 1px 1px 3px 2px #eee;*/
-	-webkit-transform-style: preserve-3d;
 	-webkit-transform: rotateX(0deg);
 	-webkit-transform-origin: 50% 100%;
 }
@@ -351,7 +350,7 @@ button{
 /*close*/
 
 .card.close{
-	-webkit-animation: frame-close .6s linear;
+	-webkit-animation: frame-close .68s linear;
 	height:140px;
 }
 
@@ -362,7 +361,7 @@ button{
 	z-index: 2;
 }
 
-.close.card .after{
+.close.card:after{
 	-webkit-animation: close-after .81s linear;
 	height: 140px;
 	top: 280px;
@@ -417,7 +416,7 @@ button{
 		top: 140px;
 		-webkit-transform: rotateX(0deg);
 	}
-	66.1%{
+	66.01%{
 		top: 0;
 		-webkit-transform: rotateX(-180deg);
 	}
