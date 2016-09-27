@@ -1,0 +1,245 @@
+html,body{
+	height: 100%;
+
+}
+
+body{
+	background-color: #4E5E71;
+	margin: 0;
+	font: 14px/1.2 "Microsoft YaHei", Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+	color: #3f3f3f;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+button{
+	-webkit-appearance: none;
+	padding: 0;
+	border:0;
+}
+
+.btn{
+	width: 90%;
+	background-color: #f7c028;
+	color: #3f3f3f;
+	line-height: 34px;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 3px;
+	margin: 14px auto 0;
+}
+
+.main{
+	height: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/*card*/
+
+.card-box{
+	width:100%;
+	height: 100%;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.card{
+	border-radius: 3px;
+}
+
+.card-head{
+	background-color: #5a4a9c;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	overflow: hidden;
+	text-align: center;
+}
+
+.card-nav{
+	float: left;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+}
+
+.card-prize{
+	float: right;
+	margin-right: 14px;
+}
+
+.card-banner{
+	height: 100px;
+	background-image: url(banner1.png);
+	background-position: center;
+	background-size: 100%;
+}
+
+/*step-1*/
+
+.step-1{
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	transform: rotateX(180deg);
+	transform-origin: 0 0;
+	transition: all .6s;
+}
+
+.step-1>div{
+	height: 140px;
+	background-color: #fff;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.preview{
+	position: absolute;
+	width: 100%;
+	transform: rotateX(180deg);
+}
+
+.preview{
+	border-radius: 3px;
+}
+
+.preview-left{
+	float: left;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+	position: relative;
+	color: #fff;
+}
+
+.left-back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #5a4a9c;
+	z-index: 1;
+}
+
+.left-content{
+	position: relative;
+	z-index: 2;
+}
+
+.left-prize{
+	font-size: 20px;
+	margin: 30px 0 40px;
+}
+
+.left-time{
+	font-size: 12px;
+	margin: 4px 0;
+}
+
+.preview-right{
+	float: right;
+	width: 70%;
+	height: 100%;
+}
+
+.preview-right .right-address{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 14px;
+	margin: 15px 0;
+}
+
+.info-table{
+	width: 100%;
+	text-align: center;
+	color: #9a9a9a;
+	font-size: 12px;
+	margin-top: 30px;
+}
+
+.user-box>div{
+	/*border-top:1px solid #f4f4f4;*/
+	box-sizing: border-box;
+}
+
+.user-line{
+	height: 80px;
+}
+.user-img{
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin: 10px 10px 10px 20px;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+.tips{
+	font-size: 12px;
+	color: #9a9a9a;
+	margin: 0;
+}
+
+.name{
+	font-weight: 600;
+	margin: 20px 0 0;
+}
+
+.user-info{
+	overflow: hidden;
+}
+
+.other-line{
+	overflow: hidden;
+	font-size: 0;
+	height: 60px;
+	width: 100%;
+	background-color: #fff;
+}
+
+.other-info{
+	width: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 8px 20px;
+}
+
+.other-2{
+	transform-origin: 0 0;
+	transform: rotateX(-180deg) translateZ(-1px);
+	transition: all .4s;
+}
+
+.other-info p{
+	margin: 0;
+	padding: 0;
+}
+
+.other-info .title{
+	color: #9a9a9a;
+	font-size: 12px;
+}
+
+.other-info .main{
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.other-info .des{
+	font-size: 12px;
+}
+
+
+.show1 .step-1{
+	transform: rotateX(0deg);
+}
+
+.show2 .other-2{
+	transform: rotateX(0deg);
+}
