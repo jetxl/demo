@@ -22,6 +22,10 @@ button {
     border: 0;
 }
 
+div{
+    backface-visibility: hidden;
+}
+
 .btn {
     width: 90%;
     background-color: #f7c028;
@@ -51,8 +55,6 @@ button {
     border-radius: 3px;
     margin: 14px 0;
     height: 140px;
-    /*transform: rotate3d(1,1,-1,60deg);*/
-    /*transform-style: preserve-3d;*/
 }
 
 .card-head {
@@ -97,9 +99,6 @@ button {
     height: 140px;
     width: 100%;
     background-color: #fff;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    perspective: 1000px;
 }
 
 .preview {
@@ -216,6 +215,7 @@ button {
     transform-origin: 100% 100%;
     transform: rotateX(0deg);
     transform-style: preserve-3d;
+    perspective: 1000px;
     position: absolute;
     bottom: 0;
 }
@@ -244,6 +244,7 @@ button {
     position: relative;
     background-color: #fff;
     transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .card-bottom {
@@ -251,10 +252,12 @@ button {
     height: 100%;
     width: 100%;
     transform-style: preserve-3d;
+    perspective: 1000px;
     background-color: #fff;
     text-align: center;
     transform-origin: 0 0;
-    top: 0;
+    top: 100%;
+    transform: rotateX(180deg);
 }
 
 .info-tips {
@@ -290,6 +293,7 @@ button {
     background-color: #f7a508;
 }
 
+/*激活样式*/
 .card.active .preview-left{
     color: #fff;
 }
@@ -305,40 +309,43 @@ button {
 
 /*show 动画*/
 .step-1{
-    transition: all .3s ease-in;
+    transition: transform .3s ease-in;
 }
 .other-2{
-    transition: all .2s;
+    transition: transform .2s;
 }
-.card-bottom,.card {
-    transition: all .3s;
+.card-bottom{
+    transition: transform .3s;
+}
+.card{
+    transition: margin .3s;
 }
 
+/*第一步*/
 .show1 .step-1 {
     transform: rotateX(0deg);
 }
 
 .show1.card{
-    height: 280px;
+    margin-bottom: 154px;
 }
+
+/*第二步*/
 
 .show2 .other-2 {
     transform: rotateX(-180deg);
 }
 
-.show2 .card-bottom {
-    z-index: 1;
+.show2.card{
+    margin-bottom: 214px;
 }
 
-.show2.card{
-    height: 340px;
-}
+/*第三步*/
 
 .show3 .card-bottom {
-    transform: rotateX(-180deg);
-    height: 80px;
+    transform: rotateX(0deg);
 }
 
 .show3.card{
-    height: 420px;
+    margin-bottom: 274px;
 }

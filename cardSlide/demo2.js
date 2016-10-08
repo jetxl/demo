@@ -10,12 +10,22 @@ $(function(){
 
 	$('.card').on('click',function(){
 		var card = $(this);
-		card.addClass('show1 active');
-		setTimeout(function(){
-			card.addClass('show2');
+		scrollToTop(card,function(){
+			card.addClass('show1');
 			setTimeout(function(){
-				card.addClass('show3');
-			},200);
-		},300);
-	})
+				card.addClass('show2');
+				setTimeout(function(){
+					card.addClass('show3');
+				},200);
+			},300);
+		});
+	});
+
+	//scroll to card top
+	function scrollToTop(card,callback){
+		var top  = card.offset().top-10;
+		$('body').animate({scrollTop:top},200,callback);
+	}
+
+
 });

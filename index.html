@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>页面导航</title>
+    <style>
+        body{
+            font: 14px "Microsoft YaHei", Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+            line-height: 1.7em;
+            color: #666;
+        }
+        a{
+            color: inherit;
+        }
+
+        h1{
+            font-size: 1.3em;
+            color: #3f3f3f;
+        }
+
+        h2{
+            font-size: 1.1em;
+            color: #3f3f3f;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><h1><a href="3dTest.html">3D测试页面</a></h1></li>
+    <li>
+        <h1><a href="cardSlide/index.html">卡片滑动页面</a></h1>
+        <p>第一版使用一个after灰色元素模拟卡片翻转，整个动画过程被看成一个整体，然后多线程多个动画同时进行，组合成一个动画</p>
+        <p>
+            <h2>缺点：</h2>
+            1.在手机端性能较差，导致多个动画进行时间不一致，最后出现重影<br>
+            2.翻转过程中并不是一个匀速的动画，多个动画同时进行速度曲线很难同步<br>
+        </p>
+    </li>
+    <li>
+        <h1><a href="cardSlide/index2.html">卡片滑动第二版</a></h1>
+        <p>第二版将卡片翻转尽量按真实模拟，每一段翻转都有正面和背面，真实的翻转后展示元素</p>
+        <p>
+            <h2>缺点：</h2>
+            1.实际效果感觉更真实流畅，但在在手机端性能更差<br>
+            2.翻转存在3段以上，元素的层级冲突<br>
+            3.html结构变得更复杂<br>
+
+            <h2>日志：</h2>
+            2016/10/08
+            1.尽量减少同时执行的动画
+            2.修改类的替换为单个属性的修改
+        </p>
+    </li>
+</ul>
+</body>
+</html>
