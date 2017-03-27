@@ -11,6 +11,11 @@
 
 #### visibility当前元素隐藏，可继承，子元素如果设置visible，则可以模仿pointer-events鼠标穿透
 
+#### -webkit-font-smoothing
+>	只对mac的chrome有效
+>	-webkit-font-smoothing: none: 无抗锯齿
+>	-webkit-font-smoothing: antialiased | subpixel-antialiased | default: 灰度平滑
+
 ### JS
 
 #### vue,input:type=search时，虽然回车能触发watch或者change，但是v-model的值会被强制改成event，而且冒泡所有关联的事件参数都会强制被改成event；
@@ -53,19 +58,46 @@
 >Transfer-Encoding: chunked
 
 3.跨域系列
-4.代理系列
-5.请求系列
+
+6.websockets系列
+
+7.安全扩展系列
+#### X-Frame-Options
+>X-Frame-Options:DENY//这个页面不允许被以frame的方式加载
+>X-Frame-Options:SAMEORIGIN//这个页面只允许同源页面加载
+>X-Frame-Options:<uri> //这个页面只能被特定的域加载
+
+#### X-Content-Type-Options
+>	nosniff
+>	防止content-type进行嗅探
+
+#### X-XSS-Protection（IE过滤，默认打开）
+
+
+8.代理扩展系列
+
+=========================================
+1.General
+>status Code
+>method
+>url
+
+2.请求系列
 >Accept
 >request
+>uesr-Agent
+>accept-language/encoding/type
+>referer(请求方域名)
 >Link: </images/big.jpeg>; rel=prefetch[链接预取](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Link_prefetching_FAQ)
 
-6.响应系列
+3.响应系列
 >Allow
->Content
+>Content-type/encoding
+>server
+>date
+>age
 >set-cookie
-
-7.websockets系列
-
+>connection
 
 #### [http缓存](https://zhuanlan.zhihu.com/p/24467558)
 >	get可以被缓存，post不能
@@ -221,7 +253,7 @@
 
 ## 待研究
 
-### # arguments
+#### arguments
 >	类数组对象
 >	caller指向上一层的调用的函数，值为函数的toString
 >	arguments.callee.length是形参长度，arguments.length是实参长度，callee指函数本身，可用于递归调用
